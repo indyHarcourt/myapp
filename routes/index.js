@@ -21,8 +21,8 @@ router.post('/', function (req, res, next) {
     var imgSrc = req.file ? req.file.path : '';
     Promise.resolve(imgSrc)
         .then(function detectFace(image) {
-            console.log('OXFORD_API: ' + process.env.OXFORD_API );
-            var client = new oxford.Client(process.env.OXFORD_API);
+            //console.log('OXFORD_API: ' + process.env.OXFORD_API );
+            var client = new oxford.Client('ed66cf0829a74514be2f713eb5fc5952');
             console.log('DONE with calling Oxford');
             return client.face.detect({path: image});
         })
